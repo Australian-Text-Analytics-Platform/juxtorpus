@@ -54,6 +54,9 @@ preshed==3.0.6
 py==1.11.0
 pyarrow==9.0.0
 pydantic==1.8.2
+# pydantic 1.8 (required by spaCy 3.4) breaks with typing_extensions >= 4.6
+# ('issubclass() arg 1 must be a class'), so keep it below that.
+typing_extensions==4.5.0
 pyFUME==0.2.25
 pyLDAvis==3.4.0
 pymusas==0.3.0
