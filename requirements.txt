@@ -2,6 +2,9 @@
 # Jupyter server/notebook/kernel infrastructure pins were removed when freezing
 # the tool for BinderHub: they downgraded the image's Jupyter server below what
 # jupyterhub-singleuser needs, so the server failed to start on BinderHub.
+# spaCy/thinc/pydantic/confection were bumped within spaCy 3.4 (3.4.0 -> 3.4.4) so that
+# pydantic 1.10 can be used: pydantic < 1.10.8 breaks with the typing_extensions
+# that the image's JupyterHub stack requires.
 # CPU-only torch build: BinderHub has no GPU, and the default CUDA wheel is very large.
 --extra-index-url https://download.pytorch.org/whl/cpu
 atap-widgets==0.3.0
@@ -12,7 +15,7 @@ catalogue==2.0.8
 chardet==5.0.0
 click==8.0.4
 colorlog==6.7.0
-confection==0.0.3
+confection==0.0.4
 cycler==0.11.0
 cymem==2.0.6
 cytoolz==0.12.0
@@ -53,10 +56,7 @@ pluggy==1.0.0
 preshed==3.0.6
 py==1.11.0
 pyarrow==9.0.0
-pydantic==1.8.2
-# pydantic 1.8 (required by spaCy 3.4) breaks with typing_extensions >= 4.6
-# ('issubclass() arg 1 must be a class'), so keep it below that.
-typing_extensions==4.5.0
+pydantic==1.10.21
 pyFUME==0.2.25
 pyLDAvis==3.4.0
 pymusas==0.3.0
@@ -73,15 +73,15 @@ simpful==2.10.0
 simplejson==3.18.3
 sklearn==0.0
 smart-open==5.2.1
-spacy==3.4.0
+spacy==3.4.4
 spacy-alignments==0.8.5
-spacy-legacy==3.0.9
+spacy-legacy==3.0.12
 spacy-loggers==1.0.3
 spacy-transformers==1.1.7
 srsly==2.4.4
 tenacity==8.1.0
 textacy==0.12.0
-thinc==8.1.5
+thinc==8.1.12
 threadpoolctl==3.1.0
 tokenizers==0.12.1
 toolz==0.12.0
