@@ -1,0 +1,4 @@
+#!/bin/bash
+# Bake NLTK data into the image so the demo notebook does not download it at runtime.
+set -euo pipefail
+python -m nltk.downloader -d "${CONDA_PREFIX:-$(python -c 'import sys; print(sys.prefix)')}/share/nltk_data" stopwords punkt

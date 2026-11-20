@@ -1,3 +1,5 @@
+# CPU-only torch build: BinderHub has no GPU, and the default CUDA wheel is very large.
+--extra-index-url https://download.pytorch.org/whl/cpu
 anyio==3.6.1
 appnope==0.1.3
 argon2-cffi==21.3.0
@@ -145,7 +147,7 @@ tinycss2==1.1.1
 tokenizers==0.12.1
 tomli==2.0.1
 toolz==0.12.0
-torch==1.12.0
+torch==1.12.0+cpu
 tornado==6.2
 tqdm==4.64.0
 traitlets==5.3.0
@@ -161,3 +163,6 @@ widgetsnbextension==3.6.1
 wordcloud==1.8.2.2
 XlsxWriter==3.0.3
 zipp==3.8.1
+# Added when freezing the tool for BinderHub: required by notebooks/demos/corpus.ipynb
+nltk==3.7
+en_core_web_sm @ https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.4.0/en_core_web_sm-3.4.0-py3-none-any.whl

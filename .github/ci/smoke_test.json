@@ -1,0 +1,6 @@
+{
+  "imports": ["juxtorpus", "spacy", "en_core_web_sm", "torch", "nltk"],
+  "notebooks": [
+    {"path": "notebooks/demos/corpus.ipynb", "must_pass_cells": null, "timeout": 2400}
+  ]
+}
